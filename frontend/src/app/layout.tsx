@@ -1,6 +1,7 @@
 import React from "react";
 import "./globals.sass";
 import { Inter } from "next/font/google";
+import Header from "@/components/Header";
 
 interface RootLayoutProps {
   children: React.ReactNode;
@@ -11,7 +12,10 @@ const inter = Inter({ subsets: ["latin"] });
 const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <Header />
+        <main>{children}</main>
+      </body>
     </html>
   );
 };
