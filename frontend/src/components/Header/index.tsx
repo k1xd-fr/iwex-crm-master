@@ -8,11 +8,7 @@ const Header = () => {
         <a href="/" className={styles.logo}>
           IWEX
         </a>
-        <nav className={styles.nav}>
-          <Link href="/login" className={styles.nav_link}>
-            Login
-          </Link>
-        </nav>
+        {/* <nav className={styles.nav}></nav> */}
       </div>
     </header>
   );

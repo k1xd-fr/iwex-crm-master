@@ -1,11 +1,5 @@
-import styles from "./page.module.sass";
+import HomeComponent from "@/components/Home";
 
 export default function Home() {
-  return (
-    <div className={styles.wrapper}>
-      <div className={styles.wrapper_container}>
-        <h3>Home Page</h3>
-      </div>
-    </div>
-  );
+  return <HomeComponent />;
 }
