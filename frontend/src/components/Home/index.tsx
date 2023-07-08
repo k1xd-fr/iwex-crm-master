@@ -1,5 +1,7 @@
 import Link from "next/link";
 import styles from "./home.module.sass";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
 
 const HomeComponent = () => {
   return (
