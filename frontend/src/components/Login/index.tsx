@@ -5,17 +5,41 @@ import { BiSolidHide, BiSolidShow } from "react-icons/bi";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
-  const [handler, setHandler] = useState();
-  const [form, setForm] = useState();
+
+  const [authData, setAuthData] = useState({
+    identifier: "",
+    password: "",
+  });
+
+  const submitForm = (event: React.FormEventHandler<HTMLFormElement> | any) => {
+    event.preventDefault();
+  };
 
   const togglePassword = () => {
     setShowPassword((prevPassword) => !prevPassword);
   };
+
+  const changeHandler = (event) => {
+    setAuthData((prev) => {
+      return {
+        ...prev,
+        [event.target.name]: event.target.value,
+      };
+    });
+  };
+
   return (
     <div className={styles.wrapper}>
-      <form className={styles.form}>
+      9
+      <form className={styles.form} onSubmit={submitForm}>
         <div className={styles.group}>
-          <input type="email" name="email" required className={styles.input} />
+          <input
+            type="email"
+            name="email"
+            required
+            className={styles.input}
+            onChange={changeHandler}
+          />
           <span className={styles.highlight}></span>
           <span className={styles.bar}></span>
           <label className={styles.label}>Email</label>
@@ -27,6 +51,7 @@ const Login = () => {
             name="password"
             required
             className={styles.input}
+            onChange={changeHandler}
           />
           <span className={styles.highlight}></span>
           <span className={styles.bar}></span>
