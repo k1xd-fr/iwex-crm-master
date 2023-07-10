@@ -27,6 +27,7 @@ const Login = () => {
             name="password"
             required
             className={styles.input}
+            value={"хуйня"}
           />
           <span className={styles.highlight}></span>
           <span className={styles.bar}></span>
