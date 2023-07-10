@@ -1,8 +1,7 @@
 "use client";
-
 import { useState } from "react";
 import styles from "./login.module.sass";
-import { BiSolidShow } from "react-icons/bi";
+import { BiSolidHide, BiSolidShow } from "react-icons/bi";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
@@ -29,7 +28,11 @@ const Login = () => {
           <span className={styles.highlight}></span>
           <span className={styles.bar}></span>
           <label className={styles.label}>Password</label>
-          <BiSolidShow className={styles.showIcon} onClick={togglePassword} />
+          {showPassword ? (
+            <BiSolidShow className={styles.showIcon} onClick={togglePassword} />
+          ) : (
+            <BiSolidHide className={styles.showIcon} onClick={togglePassword} />
+          )}
         </div>
         <div className={styles.group}>
           <button className={styles.btn}>Авторизоваться</button>
