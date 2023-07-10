@@ -6,6 +6,9 @@ import { BiSolidShow } from "react-icons/bi";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
+  const [handler, setHandler] = useState();
+  const [form, setForm] = useState();
+
   const togglePassword = () => {
     setShowPassword((prevPassword) => !prevPassword);
   };
