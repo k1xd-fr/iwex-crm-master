@@ -1,8 +1,6 @@
 "use client";
 import Link from "next/link";
 import styles from "./home.module.sass";
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
 import { motion } from "framer-motion";
 
 const textAnimation = {

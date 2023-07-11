@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import styles from "./navigation.module.sass";
+import { HiTranslate } from "react-icons/hi";
 
 const Header = () => {
   const text = "IWEX";
@@ -29,6 +30,7 @@ const Header = () => {
             ))}
           </span>
         </Link>
+        <HiTranslate className={styles.icon_translate} />
       </div>
     </header>
   );
