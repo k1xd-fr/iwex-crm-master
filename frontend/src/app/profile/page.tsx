@@ -1,7 +1,11 @@
 import Profiles from "@/components/Profiles";
 
 const Profile: React.FC = () => {
-  return <Profiles></Profiles>;
+  return (
+    <div style={{ background: "#ffcc00" }}>
+      <Profiles></Profiles>
+    </div>
+  );
 };
 
 export default Profile;
