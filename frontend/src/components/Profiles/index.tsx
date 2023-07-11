@@ -1,15 +1,14 @@
 import Card from "./Card";
 import styles from "./style.module.sass";
+import UserInfo from "./UserInfo";
 
 const ProfilePage = () => {
   return (
-    <div className={styles.profile}>
-      <div></div>
-      <div></div>
-      <div>
-        <Card></Card>
-      </div>
-    </div>
+    <section className={styles.profile}>
+      <h3>Личный кабинет</h3>
+      <UserInfo></UserInfo>
+      <Card></Card>
+    </section>
   );
 };
 
