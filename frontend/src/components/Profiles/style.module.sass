@@ -1,11 +1,23 @@
 .profile
   margin: 0 auto
   max-width: 90%
+  min-height: 70vh
   display: flex
-  padding: 2.5rem 0
-  border-radius: 0.5%
+  padding: 2.5rem
   padding-left: 1.5%
-  color: white
+  color: #fffffff0
   flex-direction: column
+  border-radius: 15px
   gap: 1.95rem
-  background-color: #333333
+  background-color: #333333ae
+  position: relative
+  z-index: 1
+  &::after
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    backdrop-filter: blur(5px)
+    border-radius: 25px
