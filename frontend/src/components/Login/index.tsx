@@ -30,7 +30,6 @@ const Login = () => {
 
   return (
     <div className={styles.wrapper}>
-      9
       <form className={styles.form} onSubmit={submitForm}>
         <div className={styles.group}>
           <input

@@ -1,17 +1,25 @@
 .wrapper
   width: 100%
   min-height: 100vh
-  background-position: center
+  // background-position: center
+  background: #ffcc00
   z-index: -18
   position: absolute
 
 .form
+  background: #3333337a
+  width: 450px
   display: flex
+  margin: 0 auto
+  position: absolute
+  bottom: 40%
+  left: -50%
+  right: -50%
   align-items: center
   flex-direction: column
   gap: 45px
-  padding-top: 250px
-
+  padding: 75px
+  border-radius: 14px
 .group
   position: relative
   margin-bottom: 45pxa
@@ -26,6 +34,7 @@
   font-size: 17px
   border-bottom: 1px solid #757575
   position: relative
+  color: #fff
 
   &:focus
     outline: none
@@ -33,10 +42,12 @@
   padding: 10px 90px
   outline: none
   border: solid 1px #333
-  background: transparent
+  // background: #ffcc00
+  background: #333333
   transition: .7s all
   font-size: 17px
   font-weight: 500
+  color: #fff
   &:hover
     background: #333333
     color: #ffcc00
@@ -47,9 +58,10 @@
   top: 10px
   cursor: pointer
   right: 0
+  color: #ffcc00
 
 .label
-  color: #999
+  color: #d8cece
   font-size: 18px
   font-weight: normal
   position: absolute
@@ -66,7 +78,7 @@
   &:focus ~ .label, &:valid ~ .label
     top: -20px
     font-size: 14px
-    color: #5264AE
+    color: #c6c8cf
 
 /* BOTTOM BARS =================================
 
@@ -74,14 +86,13 @@
   position: relative
   display: block
   width: 300px
-
   &:before, &:after
     content: ''
     height: 2px
     width: 0
     bottom: 1px
     position: absolute
-    background: #5264AE
+    background: #ffffff
     transition: 0.2s ease all
     -moz-transition: 0.2s ease all
     -webkit-transition: 0.2s ease all
