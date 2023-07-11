@@ -1,6 +1,38 @@
 .profile
-
-  &__header
+  display: flex
+  flex-direction: column
+  flex-wrap: wrap
+  gap: 10px
+  z-index: 10
+.header
+  display: flex
+  align-items: center
+  gap: 0.5rem
+  flex-wrap: wrap
+.body
+  display: flex
+  gap: 30px
+  margin: 40px 5px
+  flex-wrap: wrap
+  &__user
     display: flex
-    align-items: center
-    gap: 0.50rem
+    flex-direction: column
+    gap: 20px
+    >h2
+      color: white
+    &__block
+      display: flex
+      flex-direction: column
+      gap: 20px
+.info
+  display: flex
+  gap: 50px
+  &__more
+    display: flex
+    flex-direction: column
+    gap: 10px
+    > span
+      line-height: 5px
+      color: #ffffff88
+    >h3
+      color: #ffffffed
