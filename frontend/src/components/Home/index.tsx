@@ -38,10 +38,10 @@ const HomeComponent = () => {
               variants={textAnimation}
               className={styles.text}
             >
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere
-              necessitatibus reprehenderit fuga sint accusantium fugit nulla,
-              asperiores eligendi. Fugiat aliquam ex dignissimos reprehenderit
-              rerum!
+              Lorem ipsum dolor sit amet, consectetur adipisicing <br /> elit.
+              Facere necessitatibus reprehenderit fuga sint <br /> accusantium
+              fugit nulla, asperiores eligendi. Fugiat <br /> aliquam ex
+              dignissimos reprehenderit rerum!
             </motion.p>
             <Link href="/login" className={styles.btn_link}>
               Login

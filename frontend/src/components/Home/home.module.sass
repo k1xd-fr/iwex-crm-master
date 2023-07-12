@@ -17,21 +17,24 @@
 
 .description_wrap
   // text-align: center
-  padding-top: 200px
+  padding-top: 170px
   position: absolute
   z-index: 8
   .title
     text-align: center
     color: #fff
-    font-size: 40px
+    font-size: 48px
+    // font-size: clamp(2.125rem, 1.0313rem + 3.5vw, 3rem)
     line-height: 24px
+    margin-bottom: 24px
   .text
     padding-top: 35px
-    width: 500px
+    // width: 550px
     color: #fff
     line-height: 34px
-    font-size: 24px
+    // font-size: 24px
     margin-bottom: 45px
+    font-size: clamp(1.125rem, -0.125rem + 4vw, 2.125rem)
   .btn_link
     padding: 10px 60px
     border: solid 1px #fff
@@ -41,3 +44,23 @@
     font-weight: 500
     &:hover
       background: #00000070
+
+@media screen and ( max-width: 1024px )
+  .description_wrap
+    margin-top: 75px
+    padding: 24px
+
+@media screen and ( max-width: 768px )
+  .title
+    font-size: 32px
+    margin-top: 0
+    line-height: 44px !important
+  .text
+    font-size: clamp(1.125rem, -0.125rem + 4vw, 2.125rem)
+
+@media screen and ( max-width: 430px )
+  .title
+    font-size: 36px !important
+  .text
+    font-size: 20px !important
+    width: 300px
