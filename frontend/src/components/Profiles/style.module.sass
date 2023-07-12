@@ -1,18 +1,20 @@
 .profile
   margin: 0 auto
   max-width: 90%
-  min-height: 70vh
+  min-height: 100%
   display: flex
   padding: 2.5rem
   padding-left: 1.5%
   color: #fffffff0
   flex-direction: column
-  border-radius: 15px
+  border-radius: 20px
   gap: 1.95rem
   background-color: #333333ae
   position: relative
+  backdrop-filter: blur(5px)
+
   z-index: 1
-  &::after
+  &::before
     content: ""
     position: absolute
     top: 0
@@ -21,3 +23,6 @@
     height: 100%
     backdrop-filter: blur(5px)
     border-radius: 25px
+  &__cards
+    display: flex
+    flex-wrap: wrap
