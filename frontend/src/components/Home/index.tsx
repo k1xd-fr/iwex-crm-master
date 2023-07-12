@@ -2,6 +2,7 @@
 import Link from "next/link";
 import styles from "./home.module.sass";
 import { motion } from "framer-motion";
+import Footer from "../Footer";
 
 const textAnimation = {
   hidden: {
@@ -48,6 +49,7 @@ const HomeComponent = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </motion.section>
   );
 };
