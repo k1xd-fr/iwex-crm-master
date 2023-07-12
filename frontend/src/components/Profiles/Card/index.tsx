@@ -1,7 +1,19 @@
-import { IconBase } from "react-icons";
+import { motion } from "framer-motion";
 import styles from "./style.module.sass";
+import LockIcon from "./lockIcon";
 const Card = () => {
-  return <div className={styles.container}>CARD</div>;
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6, delay: 0.6 }}
+      style={{ zIndex: "10" }}
+      className={styles.card}
+    >
+      <LockIcon></LockIcon>
+      <div></div>
+    </motion.div>
+  );
 };
 
 export default Card;
