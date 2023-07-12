@@ -5,6 +5,7 @@ import { BiSolidHide, BiSolidShow } from "react-icons/bi";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
+  const [changeText, setChangeText] = useState<string>("");
 
   const [authData, setAuthData] = useState({
     identifier: "",
