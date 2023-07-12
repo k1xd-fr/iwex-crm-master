@@ -10,18 +10,21 @@ const ProfilePage = () => {
       className={styles.profile}
       initial={{ opacity: 0, y: -30 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.2 }}
+      transition={{ duration: 0.9 }}
     >
-      <motion.h2
-        style={{ zIndex: "10" }}
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.3, delay: 0.4 }}
-      >
-        Личный кабинет
-      </motion.h2>
-      <UserInfo />
-      <Card />
+      <>
+        <motion.h2
+          style={{ zIndex: "10" }}
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, delay: 0.4 }}
+        >
+          Личный кабинет
+        </motion.h2>
+
+        <UserInfo />
+        <Card />
+      </>
     </motion.section>
   );
 };
