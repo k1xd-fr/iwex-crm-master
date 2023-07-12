@@ -10,11 +10,11 @@ const LockIcon = () => {
   };
 
   return (
-    <div style={{ height: "50px", position: "relative" }} onClick={handleClick}>
+    <div style={{ height: "50px" }} onClick={handleClick}>
       <motion.div
         whileTap={{ scale: 1.5 }}
         layout
-        style={{ position: "absolute", top: 0, left: 0 }}
+        // style={{ position: "absolute", top: 0, left: 0 }}
       >
         {isOpen ? <AiFillUnlock size={40} /> : <AiFillLock size={40} />}
       </motion.div>

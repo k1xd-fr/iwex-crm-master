@@ -1,19 +1,22 @@
+
 .profile
   margin: 0 auto
   max-width: 90%
   min-height: 100%
   display: flex
-  padding: 2.5rem
   padding-left: 1.5%
   color: #fffffff0
   flex-direction: column
   border-radius: 20px
-  gap: 1.95rem
   background-color: #333333ae
   position: relative
   backdrop-filter: blur(5px)
-
   z-index: 1
+  >h2
+    text-align: center
+    padding: 50px 0 0
+    font-size: clamp(1.3rem, 0.6385rem + 2vw, 1.625rem)
+
   &::before
     content: ""
     position: absolute
@@ -24,5 +27,12 @@
     backdrop-filter: blur(5px)
     border-radius: 25px
   &__cards
+    padding: 20px
     display: flex
     flex-wrap: wrap
+    justify-content: space-around
+.df
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  gap: 30px

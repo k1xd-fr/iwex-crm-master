@@ -27,22 +27,22 @@ const ProfilePage = () => {
 
         <UserInfo />
         <div style={{ zIndex: "10" }} className={styles.profile__cards}>
-          <div className={styles.card}>
+          <div className={styles.df}>
             <CardInfo icon={<RiContactsBookFill size={25} />}>
-              <Card />
+              <Card text="Заполни анкету" />
+            </CardInfo>
+            <CardInfo icon={<FaPassport size={25} />}>
+              <Card text="Заполни анкету" />
             </CardInfo>
           </div>
-          {/* <div className={styles.card}>
+          <div>
             <CardInfo icon={<FaPassport size={25} />}>
-              <Card />
-              <Card />
+              <div className={styles.df}>
+                <Card text="Справки для регистрации" />
+                <Card text="Справки для посольства" />
+              </div>
             </CardInfo>
           </div>
-          <div className={styles.card}>
-            <CardInfo icon={<FaPassport size={25} />}>
-              <Card />
-            </CardInfo>
-          </div> */}
         </div>
       </>
     </motion.section>

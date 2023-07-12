@@ -11,11 +11,11 @@ const CardInfo: React.FC<{
       <div className={styles.cardInfo__info}>
         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
           {icon}
-          <span>Анкета</span>
+          <h4>Анкета</h4>
         </div>
         <FaRegQuestionCircle size={25} />
       </div>
-      <div className={styles.cardInfo__cards}>{children}</div>
+      {children}
     </div>
   );
 };
