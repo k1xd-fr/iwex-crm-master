@@ -32,6 +32,7 @@ const Login = () => {
   return (
     <div className={styles.wrapper}>
       <form className={styles.form} onSubmit={submitForm}>
+        <h2 className={styles.form_title}>Авторизация</h2>
         <div className={styles.group}>
           <input
             type="email"
