@@ -1,8 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
-import Card from "./Card";
+import { RiContactsBookFill } from "react-icons/ri";
+import { FaPassport } from "react-icons/fa";
 import styles from "./style.module.sass";
 import UserInfo from "./UserInfo";
+import CardInfo from "./Card/CardInfo";
+import Card from "./Card";
 
 const ProfilePage = () => {
   return (
@@ -23,7 +26,24 @@ const ProfilePage = () => {
         </motion.h2>
 
         <UserInfo />
-        <Card />
+        <div style={{ zIndex: "10" }} className={styles.profile__cards}>
+          <div className={styles.card}>
+            <CardInfo icon={<RiContactsBookFill size={25} />}>
+              <Card />
+            </CardInfo>
+          </div>
+          {/* <div className={styles.card}>
+            <CardInfo icon={<FaPassport size={25} />}>
+              <Card />
+              <Card />
+            </CardInfo>
+          </div>
+          <div className={styles.card}>
+            <CardInfo icon={<FaPassport size={25} />}>
+              <Card />
+            </CardInfo>
+          </div> */}
+        </div>
       </>
     </motion.section>
   );

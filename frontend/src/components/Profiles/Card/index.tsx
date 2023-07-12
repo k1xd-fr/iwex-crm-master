@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import styles from "./style.module.sass";
-import LockIcon from "./lockIcon";
+import LockIcon from "../../shared/LockIconAnimated";
 const Card = () => {
   return (
     <motion.div
