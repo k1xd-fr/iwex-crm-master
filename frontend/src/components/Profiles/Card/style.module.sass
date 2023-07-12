@@ -1,10 +1,42 @@
 .cardInfo
   display: flex
   flex-direction: column
+  justify-content: center
+  align-items: center
   max-width: 100%
+  gap: 20px
   &__info
-    width: clamp(9.375rem, 4.6453rem + 10.8108vw, 21.875rem)
+    width: clamp(15.625rem, 3.125rem + 28.5714vw, 50.125rem)
     display: flex
     justify-content: space-between
     align-items: center
     text-align: center
+    flex-wrap: wrap
+    >div
+      >h4
+        font-size: clamp(0.7rem, 0.6385rem + 2vw, 1.225rem)
+
+.card
+  width: clamp(15.625rem, 3.125rem + 28.5714vw, 40.125rem)
+  background: gray
+  border-radius: 10px
+  display: flex
+  padding: 20px
+  justify-content: center
+  align-items: center
+  gap: 100%
+.btn
+  max-width: 100%
+  background: white
+  font-size: 12px
+  padding: 10px 50%
+  border-radius: 10px
+  color: #333333
+.more
+  color: black
+  font-size: 12px
+.text
+  max-width: 130px
+  text-align: center
+  display: flex
+  flex-direction: column
