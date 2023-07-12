@@ -8,7 +8,7 @@ const Login = () => {
   const [changeText, setChangeText] = useState<string>("");
 
   const [authData, setAuthData] = useState({
-    identifier: "",
+    email: "",
     password: "",
   });
 
