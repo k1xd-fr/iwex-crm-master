@@ -6,8 +6,14 @@ import styles from "./style.module.sass";
 import UserInfo from "./UserInfo";
 import CardInfo from "./Card/CardInfo";
 import Card from "./Card";
+import { useRouter } from "next/navigation";
 
 const ProfilePage = () => {
+  const router = useRouter();
+
+  const handleCardClick = (url: string) => {
+    router.push(url);
+  };
   return (
     <motion.section
       className={styles.profile}
@@ -27,19 +33,35 @@ const ProfilePage = () => {
 
         <UserInfo />
         <div style={{ zIndex: "10" }} className={styles.profile__cards}>
-          <div className={styles.df}>
-            <CardInfo icon={<RiContactsBookFill size={25} />}>
-              <Card text="Заполни анкету" />
+          <div className={styles.df2}>
+            <CardInfo title="Анкета" icon={<RiContactsBookFill size={25} />}>
+              <Card
+                link={() => handleCardClick("/profile/anketa")}
+                lock={true}
+                text="Заполни анкету"
+              />
             </CardInfo>
-            <CardInfo icon={<FaPassport size={25} />}>
-              <Card text="Заполни анкету" />
+            <CardInfo title="Анкета" icon={<FaPassport size={25} />}>
+              <Card
+                lock={false}
+                link={() => handleCardClick("/profile/anketa2")}
+                text="Заполни анкету"
+              />
             </CardInfo>
           </div>
           <div>
-            <CardInfo icon={<FaPassport size={25} />}>
+            <CardInfo title="Справки и док-ты" icon={<FaPassport size={25} />}>
               <div className={styles.df}>
-                <Card text="Справки для регистрации" />
-                <Card text="Справки для посольства" />
+                <Card
+                  lock={false}
+                  link={() => handleCardClick("/profile/anketa3")}
+                  text="Справки для регистрации"
+                />
+                <Card
+                  lock={false}
+                  link={() => handleCardClick("/profile/anketa4")}
+                  text="Справки для посольства"
+                />
               </div>
             </CardInfo>
           </div>

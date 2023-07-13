@@ -1,19 +1,41 @@
+import { useState } from "react";
 import { ReactComponentElement, ReactNode } from "react";
 import { FaRegQuestionCircle } from "react-icons/fa";
 import { IconType } from "react-icons";
 import styles from "./style.module.sass";
-const CardInfo: React.FC<{
+
+interface CardInfoProps {
   children: ReactNode;
   icon: ReactComponentElement<IconType>;
-}> = ({ children, icon }) => {
+  title: string;
+}
+
+const CardInfo: React.FC<CardInfoProps> = ({ children, icon, title }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
   return (
     <div className={styles.cardInfo}>
       <div className={styles.cardInfo__info}>
         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
           {icon}
-          <h4>Анкета</h4>
+          <h4>{title}</h4>
         </div>
-        <FaRegQuestionCircle size={25} />
+        <div>
+          <FaRegQuestionCircle
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            size={25}
+          />
+          {isHovered && <h1>dasd</h1>}
+        </div>
       </div>
       {children}
     </div>
