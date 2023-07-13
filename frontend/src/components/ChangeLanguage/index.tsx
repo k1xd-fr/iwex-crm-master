@@ -4,6 +4,7 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { HiTranslate } from "react-icons/hi";
 import styles from "./language.module.sass";
+import i18next from "i18next";
 
 export default function BasicMenu() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -13,6 +14,10 @@ export default function BasicMenu() {
   };
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const changeLanguage = (language) => {
+    i18next.changeLanguage(language);
   };
 
   return (
@@ -26,6 +31,7 @@ export default function BasicMenu() {
       >
         <HiTranslate className={styles.icon_translate} />
       </Button>
+
       <Menu
         id="basic-menu"
         anchorEl={anchorEl}
@@ -35,10 +41,10 @@ export default function BasicMenu() {
           "aria-labelledby": "basic-button",
         }}
       >
-        <MenuItem onClick={handleClose}>Kg</MenuItem>
-        <MenuItem onClick={handleClose}>Ru</MenuItem>
-        <MenuItem onClick={handleClose}>En</MenuItem>
-        <MenuItem onClick={handleClose}>Deu</MenuItem>
+        <MenuItem onClick={() => changeLanguage("kg")}>Kg</MenuItem>
+        <MenuItem onClick={() => changeLanguage("ru")}>Ru</MenuItem>
+        <MenuItem onClick={() => changeLanguage("en")}>En</MenuItem>
+        <MenuItem onClick={() => changeLanguage("deu")}>Deu</MenuItem>
       </Menu>
     </div>
   );

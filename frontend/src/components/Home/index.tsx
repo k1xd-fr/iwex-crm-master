@@ -3,6 +3,10 @@ import Link from "next/link";
 import styles from "./home.module.sass";
 import { motion } from "framer-motion";
 import Footer from "../Footer";
+// import i18n from "@/i18n";
+
+import { useTranslation } from "react-i18next";
+import BasicMenu from "../ChangeLanguage";
 
 const textAnimation = {
   hidden: {
@@ -17,6 +21,10 @@ const textAnimation = {
 };
 
 const HomeComponent = () => {
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language);
+  };
+  const { t, i18n } = useTranslation();
   return (
     <motion.section
       initial="hidden"
@@ -24,6 +32,7 @@ const HomeComponent = () => {
       className={styles.container}
     >
       <div className={styles.wrapper}>
+        {/* <BasicMenu /> */}
         <div className={styles.wrapper_container}>
           <div className={styles.description_wrap}>
             <motion.h1
@@ -31,20 +40,18 @@ const HomeComponent = () => {
               variants={textAnimation}
               className={styles.title}
             >
-              Добро пожаловать на Iwex CRM
+              {t("title")}
+              {/* title */}
             </motion.h1>
             <motion.p
               custom={2}
               variants={textAnimation}
               className={styles.text}
             >
-              Lorem ipsum dolor sit amet, consectetur adipisicing <br /> elit.
-              Facere necessitatibus reprehenderit fuga sint <br /> accusantium
-              fugit nulla, asperiores eligendi. Fugiat <br /> aliquam ex
-              dignissimos reprehenderit rerum!
+              {t("desc")}
             </motion.p>
             <Link href="/login" className={styles.btn_link}>
-              Login
+              {t("btn")}
             </Link>
           </div>
         </div>
