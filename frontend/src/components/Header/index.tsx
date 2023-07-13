@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import styles from "./navigation.module.sass";
 import BasicMenu from "../ChangeLanguage";
+import Image from "next/image";
 
 const Header = () => {
   const text = "IWEX";
@@ -15,8 +16,9 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.header__container}>
-        <Link href="/">
-          <span className={styles.logo}>
+        <Link href="/" className={styles.logo}>
+          <Image src="./img/iwex.svg" width={35} height={35} alt="logo-iwex" />
+          <span className={styles.logo_text}>
             {text.split("").map((letter, index) => (
               <motion.span
                 key={index}
