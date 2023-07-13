@@ -2,15 +2,11 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { AiFillLock, AiFillUnlock } from "react-icons/ai";
 
-const LockIcon = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleClick = () => {
-    setIsOpen(!isOpen);
-  };
+const LockIcon = ({ lock }) => {
+  const [isOpen, setIsOpen] = useState(lock);
 
   return (
-    <div style={{ height: "50px" }} onClick={handleClick}>
+    <div style={{ height: "50px" }}>
       <motion.div
         whileTap={{ scale: 1.5 }}
         layout
