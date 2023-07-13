@@ -2,11 +2,13 @@
 import { useState } from "react";
 import styles from "./login.module.sass";
 import { BiSolidHide, BiSolidShow } from "react-icons/bi";
+import { useTranslation } from "react-i18next";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [changeText, setChangeText] = useState<string>("");
 
+  const { t, i18n } = useTranslation();
   const [authData, setAuthData] = useState({
     email: "",
     password: "",
@@ -18,6 +20,10 @@ const Login = () => {
 
   const togglePassword = () => {
     setShowPassword((prevPassword) => !prevPassword);
+  };
+
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language);
   };
 
   const changeHandler = (event) => {
@@ -32,7 +38,7 @@ const Login = () => {
   return (
     <div className={styles.wrapper}>
       <form className={styles.form} onSubmit={submitForm}>
-        <h2 className={styles.form_title}>Авторизация</h2>
+        <h2 className={styles.form_title}>{t("titleLogin")}</h2>
         <div className={styles.group}>
           <input
             type="email"
@@ -67,6 +73,9 @@ const Login = () => {
           <button className={styles.btn}>Авторизоваться</button>
         </div>
       </form>
+      {/* <button onClick={() => changeLanguage("ru")}>Ru</button>
+      <button onClick={() => changeLanguage("en")}>En</button>
+      <button onClick={() => changeLanguage("deu")}>Deu</button> */}
     </div>
   );
 };
