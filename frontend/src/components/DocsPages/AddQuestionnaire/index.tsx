@@ -1,4 +1,4 @@
-import styles from "./addprofile.module.sass";
+import styles from "./addQuestionnaire.module.sass";
 
 const AddProfile = () => {
   return (
