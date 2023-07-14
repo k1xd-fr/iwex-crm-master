@@ -40,7 +40,7 @@ const ProfilePage = () => {
               tooltip="Hello"
             >
               <Card
-                link={() => handleCardClick("/profile/anketa")}
+                link={() => handleCardClick("/profile/document-Questionnaire")}
                 lock={true}
                 text="Заполни анкету"
               />
@@ -52,7 +52,9 @@ const ProfilePage = () => {
             >
               <Card
                 lock={false}
-                link={() => handleCardClick("/profile/anketa2")}
+                link={() =>
+                  handleCardClick("/profile/document-Immatrikulations")
+                }
                 text="Заполни анкету"
               />
             </CardInfo>
