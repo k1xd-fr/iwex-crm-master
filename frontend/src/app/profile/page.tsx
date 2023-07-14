@@ -1,11 +1,10 @@
 import Profiles from "@/components/Profiles";
-import { maxHeight } from "@mui/system";
 
 const Profile: React.FC = () => {
   return (
     <div
       style={{
-        background: "#ffcc00 ",
+        background: "#fc0",
         padding: "2% 0",
         height: "100%",
       }}

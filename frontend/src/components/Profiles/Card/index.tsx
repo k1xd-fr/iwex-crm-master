@@ -13,7 +13,12 @@ const Card: React.FC<{
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.6 }}
-        style={{ zIndex: "10", display: "flex", flexWrap: "wrap" }}
+        style={{
+          zIndex: "10",
+          display: "flex",
+          flexWrap: "wrap",
+          background: "#333",
+        }}
         className={styles.card}
       >
         <LockIcon lock={lock}></LockIcon>
