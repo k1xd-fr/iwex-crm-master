@@ -68,12 +68,12 @@ const ProfilePage = () => {
               <div className={styles.df}>
                 <Card
                   lock={false}
-                  link={() => handleCardClick("/profile/document-Embassy")}
+                  link={() => handleCardClick("/profile/document-Register")}
                   text="Справки для регистрации"
                 />
                 <Card
                   lock={false}
-                  link={() => handleCardClick("/profile/document-Register")}
+                  link={() => handleCardClick("/profile/document-Embassy")}
                   text="Справки для посольства"
                 />
               </div>
