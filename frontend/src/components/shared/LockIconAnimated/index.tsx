@@ -12,7 +12,11 @@ const LockIcon = ({ lock }) => {
         layout
         // style={{ position: "absolute", top: 0, left: 0 }}
       >
-        {isOpen ? <AiFillUnlock size={40} /> : <AiFillLock size={40} />}
+        {isOpen ? (
+          <AiFillUnlock color="#ffcc00" size={40} />
+        ) : (
+          <AiFillLock color="#ffcc00" size={40} />
+        )}
       </motion.div>
     </div>
   );

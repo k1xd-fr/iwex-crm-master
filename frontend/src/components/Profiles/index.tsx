@@ -23,7 +23,7 @@ const ProfilePage = () => {
     >
       <>
         <motion.h2
-          style={{ zIndex: "10" }}
+          style={{ zIndex: "10", color: "#ffcc00" }}
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.4 }}
@@ -34,14 +34,22 @@ const ProfilePage = () => {
         <UserInfo />
         <div style={{ zIndex: "10" }} className={styles.profile__cards}>
           <div className={styles.df2}>
-            <CardInfo title="Анкета" icon={<RiContactsBookFill size={25} />}>
+            <CardInfo
+              title="Анкета"
+              icon={<RiContactsBookFill color="#ffcc00" size={25} />}
+              tooltip="Hello"
+            >
               <Card
                 link={() => handleCardClick("/profile/anketa")}
                 lock={true}
                 text="Заполни анкету"
               />
             </CardInfo>
-            <CardInfo title="Анкета" icon={<FaPassport size={25} />}>
+            <CardInfo
+              tooltip="Hello pidrasd"
+              title="Immatrikulations"
+              icon={<FaPassport color="#ffcc00" size={25} />}
+            >
               <Card
                 lock={false}
                 link={() => handleCardClick("/profile/anketa2")}
@@ -50,16 +58,20 @@ const ProfilePage = () => {
             </CardInfo>
           </div>
           <div>
-            <CardInfo title="Справки и док-ты" icon={<FaPassport size={25} />}>
+            <CardInfo
+              tooltip="Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio veniam incidunt fuga accusamus mollitia. Odit, laboriosam voluptas. Nesciunt magnam repellendus, fugit, accusantium eveniet saepe iure eum sit corporis suscipit tenetur?"
+              title="Справки и док-ты"
+              icon={<FaPassport color="#ffcc00" size={25} />}
+            >
               <div className={styles.df}>
                 <Card
                   lock={false}
-                  link={() => handleCardClick("/profile/anketa3")}
+                  link={() => handleCardClick("/profile/document-Embassy")}
                   text="Справки для регистрации"
                 />
                 <Card
                   lock={false}
-                  link={() => handleCardClick("/profile/anketa4")}
+                  link={() => handleCardClick("/profile/document-Register")}
                   text="Справки для посольства"
                 />
               </div>
