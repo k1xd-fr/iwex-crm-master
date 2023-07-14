@@ -1,10 +1,15 @@
+import Link from "next/link";
 import styles from "./addQuestionnaire.module.sass";
+import { BiLogOut } from "react-icons/bi";
 
 const AddProfile = () => {
   return (
     <div className={styles.sidebar_container}>
       <aside className={styles.sideBar}>
-        <h2>Базова анкета</h2>
+        <Link href="/" className={styles.logout}>
+          <BiLogOut />
+          Назад
+        </Link>
         <div className={styles.sidebar_content}>
           <nav className={styles.nav}>
             <a href="#" className={styles.nav_link}>
@@ -58,7 +63,7 @@ const AddProfile = () => {
           </nav>
         </div>
       </aside>
-      <h3>контент</h3>
+      <h3>Фотография</h3>
     </div>
   );
 };
