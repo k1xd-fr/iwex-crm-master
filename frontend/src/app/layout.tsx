@@ -4,6 +4,7 @@ import "./globals.sass";
 import { Inter } from "next/font/google";
 import Header from "@/components/Header";
 import "../i18n";
+import Loader from "@/components/shared/Loader";
 
 interface RootLayoutProps {
   children: React.ReactNode;
@@ -15,7 +16,7 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   return (
     <html lang="en">
       <body>
-        <Suspense fallback={<h1>Loading...</h1>}>
+        <Suspense fallback={<Loader />}>
           <Header />
           <main>{children}</main>
         </Suspense>

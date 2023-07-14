@@ -16,7 +16,7 @@ export default function BasicMenu() {
     setAnchorEl(null);
   };
 
-  const changeLanguage = (language) => {
+  const changeLanguage = (language: any) => {
     i18next.changeLanguage(language);
   };
 
