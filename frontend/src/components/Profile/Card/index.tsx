@@ -19,12 +19,20 @@ const Card: React.FC<{
           flexWrap: "wrap",
           background: "#333",
         }}
-        className={styles.card}
+        className={
+          !lock ? styles.card : styles.card + " " + styles.card__active
+        }
       >
         <LockIcon lock={lock}></LockIcon>
         <div className={styles.text}>
           <h4>{text}</h4>
-          <Button className={styles.more}>Подробнее</Button>
+          <Button
+            className={
+              !lock ? styles.more : styles.more + " " + styles.more__active
+            }
+          >
+            Подробнее
+          </Button>
         </div>
         <Button className={styles.btn}>Открыть</Button>
       </motion.div>
