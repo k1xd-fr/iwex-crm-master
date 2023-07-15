@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styles from "./addQuestionnaire.module.sass";
 import { BiLogOut } from "react-icons/bi";
+import AddUserPhoto from "../Add-photo";
 
 const AddProfile = () => {
   return (
@@ -63,7 +64,15 @@ const AddProfile = () => {
           </nav>
         </div>
       </aside>
-      <h3>Фотография</h3>
+      <div className={styles.wrapper}>
+        <div className={styles.wrapper_content}>
+          <div className={styles.userInfo}>
+            <h3>Фотография</h3>
+            <AddUserPhoto />
+          </div>
+          <div className={styles.userDataInputs}></div>
+        </div>
+      </div>
     </div>
   );
 };
