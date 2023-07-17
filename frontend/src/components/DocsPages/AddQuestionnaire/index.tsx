@@ -2,6 +2,9 @@ import Link from "next/link";
 import styles from "./addQuestionnaire.module.sass";
 import { BiLogOut } from "react-icons/bi";
 import AddUserPhoto from "../Add-photo";
+import { dataInput, option2, option3, option4, options } from "./question";
+import NavBar from "./Navigation";
+import Registraton from "./PlacefResidence";
 
 const AddProfile = () => {
   return (
@@ -12,65 +15,86 @@ const AddProfile = () => {
           Назад
         </Link>
         <div className={styles.sidebar_content}>
-          <nav className={styles.nav}>
-            <a href="#" className={styles.nav_link}>
-              Личные данные
-            </a>
-            <a href="#" className={styles.nav_link}>
-              Место рождения
-            </a>
-            <a href="#" className={styles.nav_link}>
-              Адрес прописки
-            </a>
-            <a href="#" className={styles.nav_link}>
-              Фактический адрес
-            </a>
-            <a href="#" className={styles.nav_link}>
-              Фактический адрес
-            </a>
-            <a href="#" className={styles.nav_link}>
-              Паспортные данные
-            </a>
-            <a href="#" className={styles.nav_link}>
-              Контакты
-            </a>
-            <a href="#" className={styles.nav_link}>
-              Информация об университетах и учёбе
-            </a>
-            <a href="#" className={styles.nav_link}>
-              Информация о родителях
-            </a>
-            <a href="#" className={styles.nav_link}>
-              Информация о вашем опыте работы
-            </a>
-            <a href="#" className={styles.nav_link}>
-              Владения языками
-            </a>
-            <a href="#" className={styles.nav_link}>
-              Водительские права
-            </a>
-            <a href="#" className={styles.nav_link}>
-              Умение езды
-            </a>
-            <a href="#" className={styles.nav_link}>
-              Умение езды на велосипеде
-            </a>
-            <a href="#" className={styles.nav_link}>
-              Хобби
-            </a>
-            <a href="#" className={styles.nav_link}>
-              Доп информация
-            </a>
-          </nav>
+          <NavBar />
         </div>
       </aside>
       <div className={styles.wrapper}>
         <div className={styles.wrapper_content}>
           <div className={styles.userInfo}>
-            <h3>Фотография</h3>
+            <h2>Фотография</h2>
             <AddUserPhoto />
           </div>
-          <div className={styles.userDataInputs}></div>
+          <div className={styles.userDataInputs}>
+            {dataInput.map((data) => {
+              return (
+                <div key={data.title}>
+                  <div className={styles.inputs}>
+                    <a href="#" className={styles.title} id="data">
+                      {data.title}
+                    </a>
+                    <div className={styles.input_data}>
+                      {data.inputs.map((inputs, index) => (
+                        <input
+                          key={index}
+                          type={inputs.type}
+                          placeholder={inputs.placeholder}
+                          name={inputs.name}
+                          className={styles.input_field}
+                          // value={inputs.value}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                  <div className={styles.selects}>
+                    <select required className={styles.select}>
+                      <option disabled>Выберите пол</option>
+                      {options.map((optionText, index) => (
+                        <option key={index} className={styles.option}>
+                          {optionText}
+                        </option>
+                      ))}
+                    </select>
+                    <select required className={styles.select}>
+                      <option disabled>Гражданство</option>
+                      {option2.map((optionText, index) => (
+                        <option
+                          key={`option2-${index}`}
+                          className={styles.option}
+                        >
+                          {optionText}
+                        </option>
+                      ))}
+                    </select>
+                    <select required className={styles.select}>
+                      <option disabled>Бывали ли вы в Германии</option>
+                      {option3.map((optionText, index) => (
+                        <option
+                          key={`option3-${index}`}
+                          className={styles.option}
+                        >
+                          {optionText}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+              );
+            })}
+            <div className={styles.liveCountry}>
+              <h3 className={styles.title_country} id="country">
+                Место проживания
+              </h3>
+              <select required className={styles.select}>
+                <option disabled>Страна</option>
+                {option4.map((optionText, index) => (
+                  <option key={`option4-${index}`} className={styles.option}>
+                    {optionText}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <Registraton />
+          </div>
         </div>
       </div>
     </div>
