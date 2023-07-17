@@ -1,10 +1,10 @@
-import styles from "../addQuestionnaire.module.sass";
-import { dataInputRegiatration, option5 } from "../question";
+import { dataInputActualAdress, option6 } from "../question";
+import styles from "./style.module.sass";
 
-const Registraton = () => {
+const ActualAdress = () => {
   return (
     <div>
-      {dataInputRegiatration.map((data) => {
+      {dataInputActualAdress.map((data) => {
         return (
           <div key={data.title} className={styles.wrap}>
             <h2 className={styles.residence_title} id="residence">
@@ -23,8 +23,8 @@ const Registraton = () => {
             </div>
             <select className={styles.select_residence}>
               <option disabled>Выберите Область</option>
-              {option5.map((optionText, index) => (
-                <option key={`option5-${index}`} className={styles.option}>
+              {option6.map((optionText, index) => (
+                <option key={`option6-${index}`} className={styles.option}>
                   {optionText}
                 </option>
               ))}
@@ -36,4 +36,4 @@ const Registraton = () => {
   );
 };
 
-export default Registraton;
+export default ActualAdress;

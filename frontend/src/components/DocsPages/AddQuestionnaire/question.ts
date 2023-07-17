@@ -50,14 +50,33 @@ export const option3 = [
 
 export const option4 = [
   "Кыргазстан",
-  "Россия",
-  "Другое"
 ];
 //-----Личные данные-----//
 
 
 
 // --- адрес проживания --- //
+// --- фактический адрес --- //
+export const option5 = [
+  "Чуй",
+  "Ош",
+  "Ыссык-Кол",
+  "Баткен",
+  "Джалал-Абад",
+  "Талас",
+  "Нарын"
+];
+
+export const option6 = [
+  "Чуй",
+  "Ош",
+  "Ыссык-Кол",
+  "Баткен",
+  "Джалал-Абад",
+  "Талас",
+  "Нарын"
+];
+
 export const dataInputRegiatration = [
   {
     title: "Адрес прописки",
@@ -66,49 +85,89 @@ export const dataInputRegiatration = [
         placeholder: "Город/Село(Латиница)",
         type: "text",
         name: "nameCity",
-        // value: "",
       },
       {
         placeholder: "Город/Село(На русском)",
         type: "text",
         name: "nameCityRus",
-        // value: "",
       },
       {
         placeholder: "Район(Латиница)",
         type: "text",
         name: "area",
-        // value: "",
       },
       {
         placeholder: "Район(На русском)",
         type: "text",
         name: "areaNameRus",
-        // value: "",
       },
       {
         placeholder: "Улица или Микрорайон(Латиница)",
         type: "text",
         name: "streetName",
-        // value: "",
       },
       {
         placeholder: "Улица или Микрорайон(На русском)",
         type: "text",
         name: "streetNameRus",
-        // value: "",
       },
       {
         placeholder: "Дом",
         type: "text",
         name: "home",
-        // value: "",
       },
       {
         placeholder: "Квартира",
         type: "text",
         name: "apartment",
-        // value: "",
+      },
+    ],
+  },
+]
+
+export const dataInputActualAdress = [
+  {
+    title: "Фактический адрес",
+    inputs: [
+      {
+        placeholder: "Город/Село(Латиница)",
+        type: "text",
+        name: "nameCity",
+      },
+      {
+        placeholder: "Город/Село(На русском)",
+        type: "text",
+        name: "nameCityRus",
+      },
+      {
+        placeholder: "Район(Латиница)",
+        type: "text",
+        name: "area",
+      },
+      {
+        placeholder: "Район(На русском)",
+        type: "text",
+        name: "areaNameRus",
+      },
+      {
+        placeholder: "Улица или Микрорайон(Латиница)",
+        type: "text",
+        name: "streetName",
+      },
+      {
+        placeholder: "Улица или Микрорайон(На русском)",
+        type: "text",
+        name: "streetNameRus",
+      },
+      {
+        placeholder: "Дом",
+        type: "text",
+        name: "home",
+      },
+      {
+        placeholder: "Квартира",
+        type: "text",
+        name: "apartment",
       },
     ],
   },

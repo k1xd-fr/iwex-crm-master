@@ -5,6 +5,7 @@ import AddUserPhoto from "../Add-photo";
 import { dataInput, option2, option3, option4, options } from "./question";
 import NavBar from "./Navigation";
 import Registraton from "./PlacefResidence";
+import ActualAdress from "./ActualAddress";
 
 const AddProfile = () => {
   return (
@@ -94,6 +95,7 @@ const AddProfile = () => {
               </select>
             </div>
             <Registraton />
+            <ActualAdress />
           </div>
         </div>
       </div>

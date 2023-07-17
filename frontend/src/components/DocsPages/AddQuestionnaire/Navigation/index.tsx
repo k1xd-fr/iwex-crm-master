@@ -9,7 +9,7 @@ const NavBar = () => {
       <a href="#country" className={styles.nav_link}>
         Место рождения
       </a>
-      <a href="#" className={styles.nav_link}>
+      <a href="#residence" className={styles.nav_link}>
         Адрес прописки
       </a>
       <a href="#" className={styles.nav_link}>
