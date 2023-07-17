@@ -1,14 +1,11 @@
 "use client";
-import { ReactComponentElement, ReactNode } from "react";
 import { FaRegQuestionCircle } from "react-icons/fa";
-import { IconType } from "react-icons";
-import styles from "./style.module.sass";
 import { Tooltip } from "@mui/material";
-import { fontSize } from "@mui/system";
+import styles from "./style.module.sass";
 
 interface CardInfoProps {
-  children: ReactNode;
-  icon: ReactComponentElement<IconType>;
+  children: React.ReactNode;
+  icon: React.ReactNode;
   title: string;
   tooltip: string;
 }
@@ -26,7 +23,7 @@ const CardInfo: React.FC<CardInfoProps> = ({
           {icon}
           <h4>{title}</h4>
         </div>
-        <Tooltip style={{ color: "white" }} title={tooltip}>
+        <Tooltip title={tooltip} arrow>
           <div style={{ position: "relative" }}>
             <FaRegQuestionCircle size={25} color="#ffcc00" />
           </div>
