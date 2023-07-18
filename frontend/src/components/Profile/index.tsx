@@ -12,10 +12,10 @@ type Props = {};
 
 const ProfilePage: React.FC<Props> = () => {
   const router = useRouter();
-  const hasAccess = false; // Set this flag based on the access granted status
+  const hasAccess = true; // Set this flag based on the access granted status
 
   const handleCardClick = (url: string) => {
-    if (!hasAccess) {
+    if (hasAccess) {
       router.push(url);
     } else {
       console.log("Access not granted");
@@ -30,7 +30,7 @@ const ProfilePage: React.FC<Props> = () => {
     lock: boolean
   ) => (
     <CardInfo title={title} icon={icon} tooltip="Hello">
-      <Card link={() => handleCardClick(link)} lock={!lock} text={text} />
+      <Card link={() => handleCardClick(link)} lock={lock} text={text} />
     </CardInfo>
   );
 
@@ -62,7 +62,7 @@ const ProfilePage: React.FC<Props> = () => {
             <RiContactsBookFill color="#ffcc00" size={25} />,
             "/profile/add-Questionnaire",
             "Заполни анкету",
-            !hasAccess
+            hasAccess
           )}
           {renderCard(
             "Immatrikulations",
@@ -85,7 +85,7 @@ const ProfilePage: React.FC<Props> = () => {
                 text="Справки для регистрации"
               />
               <Card
-                lock={!hasAccess}
+                lock={hasAccess}
                 link={() => handleCardClick("/profile/document-Embassy")}
                 text="Справки для посольства"
               />
