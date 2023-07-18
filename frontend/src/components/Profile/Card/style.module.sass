@@ -15,34 +15,40 @@
     >div
       >h4
         font-size: clamp(0.5rem, 0.6385rem + 2vw, 1.225rem)
+        font-weight: 300
 
 .card
   width: clamp(11.625rem, 3.125rem + 28.5714vw, 40.125rem)
   background: gray
   border-radius: 10px
   display: flex
-  padding: 20px
+  padding: 30px
   justify-content: center
   align-items: center
   gap: 100%
+  border: 3px solid #ffcc00
   &__active
     background: #fc0 !important
 
 .btn
   max-width: 100%
   background: white
+  font-weight: 600
   font-size: 12px
   padding: 10px 50%
   border-radius: 10px
-  color: #000
+  color: #333
   &:hover
     background-color: #fc0
 .more
   color: #fc0
   font-size: 12px
+  font-weight: 700
   &__active
     color: #333 !important
 .text
   text-align: center
   display: flex
   flex-direction: column
+  >h4
+    font-weight: 700

@@ -12,9 +12,9 @@ const LockIcon: React.FC<LockIconProps> = ({ lock }) => {
     <div style={{ height: "50px" }}>
       <motion.div whileTap={{ scale: 1.5 }} layout>
         {lock ? (
-          <AiFillLock color="#ffcc00" size={40} />
+          <AiFillLock color="#ffcc009f" size={40} />
         ) : (
-          <AiFillUnlock className={styles.lock} color="#333" size={40} />
+          <AiFillUnlock className={styles.lock} color="#333333" size={40} />
         )}
       </motion.div>
     </div>

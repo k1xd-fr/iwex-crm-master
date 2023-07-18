@@ -1,6 +1,7 @@
 "use client";
 import { FaRegQuestionCircle } from "react-icons/fa";
 import { Tooltip } from "@mui/material";
+import { motion } from "framer-motion";
 import styles from "./style.module.sass";
 
 interface CardInfoProps {
@@ -17,7 +18,12 @@ const CardInfo: React.FC<CardInfoProps> = ({
   tooltip,
 }) => {
   return (
-    <div className={styles.cardInfo}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6, delay: 0.6 }}
+      className={styles.cardInfo}
+    >
       <div className={styles.cardInfo__info}>
         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
           {icon}
@@ -30,7 +36,7 @@ const CardInfo: React.FC<CardInfoProps> = ({
         </Tooltip>
       </div>
       {children}
-    </div>
+    </motion.div>
   );
 };
 

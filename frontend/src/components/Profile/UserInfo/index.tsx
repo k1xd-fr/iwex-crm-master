@@ -29,7 +29,7 @@ const UserInfo = () => {
       <div className={styles.profile}>
         <div className={styles.header}>
           <CgProfile color="#ffcc00" size={30} />
-          <h2 style={{ color: "#fff" }}>Профиль</h2>
+          <h2 style={{ color: "#fff", fontWeight: "300" }}>Профиль</h2>
         </div>
         <hr className={styles.hr} />
         <div className={styles.body}>
