@@ -1,7 +1,18 @@
+import { useState } from "react";
 import styles from "../addQuestionnaire.module.sass";
 import { dataInputRegiatration, option5 } from "../question";
 
 const Registraton = () => {
+  const [input, setInput] = useState<string>();
+
+  const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setInput((prev: any) => {
+      return {
+        ...prev,
+        [event.target.name]: event.target.value,
+      };
+    });
+  };
   return (
     <div>
       {dataInputRegiatration.map((data) => {
@@ -18,6 +29,7 @@ const Registraton = () => {
                   placeholder={inputs.placeholder}
                   name={inputs.name}
                   className={styles.input_field_residence}
+                  onChange={changeHandler}
                 />
               ))}
             </div>

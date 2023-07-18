@@ -16,9 +16,6 @@ const NavBar = () => {
         Фактический адрес
       </a>
       <a href="#" className={styles.nav_link}>
-        Фактический адрес
-      </a>
-      <a href="#" className={styles.nav_link}>
         Паспортные данные
       </a>
       <a href="#" className={styles.nav_link}>

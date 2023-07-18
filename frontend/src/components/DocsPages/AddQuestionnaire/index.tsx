@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import styles from "./addQuestionnaire.module.sass";
 import { BiLogOut } from "react-icons/bi";
@@ -6,8 +7,19 @@ import { dataInput, option2, option3, option4, options } from "./question";
 import NavBar from "./Navigation";
 import Registraton from "./PlacefResidence";
 import ActualAdress from "./ActualAddress";
+import { useState } from "react";
 
-const AddProfile = () => {
+const AddProfile: React.FC = () => {
+  const [input, setInput] = useState<string>();
+
+  const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setInput((prev: any) => {
+      return {
+        ...prev,
+        [event.target.name]: event.target.value,
+      };
+    });
+  };
   return (
     <div className={styles.sidebar_container}>
       <aside className={styles.sideBar}>
@@ -41,6 +53,7 @@ const AddProfile = () => {
                           placeholder={inputs.placeholder}
                           name={inputs.name}
                           className={styles.input_field}
+                          onChange={changeHandler}
                           // value={inputs.value}
                         />
                       ))}

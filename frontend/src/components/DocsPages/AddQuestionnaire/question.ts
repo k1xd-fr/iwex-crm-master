@@ -56,7 +56,6 @@ export const option4 = [
 
 
 // --- адрес проживания --- //
-// --- фактический адрес --- //
 export const option5 = [
   "Чуй",
   "Ош",
@@ -125,6 +124,8 @@ export const dataInputRegiatration = [
   },
 ]
 
+
+// --- фактический адрес --- //
 export const dataInputActualAdress = [
   {
     title: "Фактический адрес",
