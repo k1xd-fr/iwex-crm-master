@@ -3,6 +3,7 @@ import { useState } from "react";
 import styles from "./login.module.sass";
 import { BiSolidHide, BiSolidShow } from "react-icons/bi";
 import { useTranslation } from "react-i18next";
+import Image from "next/image";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
@@ -22,11 +23,11 @@ const Login = () => {
     setShowPassword((prevPassword) => !prevPassword);
   };
 
-  const changeLanguage = (language) => {
+  const changeLanguage = (language: any) => {
     i18n.changeLanguage(language);
   };
 
-  const changeHandler = (event) => {
+  const changeHandler = (event: any) => {
     setAuthData((prev) => {
       return {
         ...prev,
@@ -35,10 +36,17 @@ const Login = () => {
     });
   };
 
+  interface img {
+    img: img;
+  }
+
   return (
     <div className={styles.wrapper}>
       <form className={styles.form} onSubmit={submitForm}>
-        <h2 className={styles.form_title}>{t("titleLogin")}</h2>
+        <div className={styles.logo_title}>
+          <Image src="./img/iwex.svg" width={40} height={40} alt="logo-iwex" />
+          <h2 className={styles.form_title}>{t("titleLogin")}</h2>
+        </div>
         <div className={styles.group}>
           <input
             type="email"
@@ -73,9 +81,18 @@ const Login = () => {
           <button className={styles.btn}>Авторизоваться</button>
         </div>
       </form>
-      {/* <button onClick={() => changeLanguage("ru")}>Ru</button>
-      <button onClick={() => changeLanguage("en")}>En</button>
-      <button onClick={() => changeLanguage("deu")}>Deu</button> */}
+      <ul className={styles.circles}>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
     </div>
   );
 };
