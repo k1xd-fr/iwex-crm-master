@@ -3,7 +3,6 @@ import Link from "next/link";
 import styles from "./home.module.sass";
 import { motion } from "framer-motion";
 import Footer from "../Footer";
-// import i18n from "@/i18n";
 
 import { useTranslation } from "react-i18next";
 import BasicMenu from "../ChangeLanguage";
@@ -13,7 +12,7 @@ const textAnimation = {
     x: -100,
     opacity: 0,
   },
-  visible: (custom) => ({
+  visible: (custom: any) => ({
     x: 0,
     opacity: 1,
     transition: { delay: custom * 0.3 },

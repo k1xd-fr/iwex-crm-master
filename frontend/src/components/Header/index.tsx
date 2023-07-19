@@ -4,6 +4,8 @@ import Link from "next/link";
 import styles from "./navigation.module.sass";
 import BasicMenu from "../ChangeLanguage";
 import Image from "next/image";
+import { BiLogOutCircle } from "react-icons/bi";
+import { useRouter } from "next/router";
 
 const Header = () => {
   const text = "IWEX";
@@ -12,6 +14,8 @@ const Header = () => {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
   };
+
+  // const { asPath } = useRouter();
 
   return (
     <header className={styles.header}>
@@ -32,7 +36,13 @@ const Header = () => {
             ))}
           </span>
         </Link>
-        <BasicMenu />
+        <div className={styles.icon_translate_logout}>
+          <BasicMenu />
+          <Link href="/" className={styles.logout}>
+            <BiLogOutCircle className={styles.icon_logout} />
+            Выйти
+          </Link>
+        </div>
       </div>
     </header>
   );
