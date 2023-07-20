@@ -8,6 +8,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import Cookies from "js-cookie";
 import axios from "axios";
+import Footer from "../Footer";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
@@ -68,59 +69,70 @@ const Login = () => {
   };
 
   return (
-    <div className={styles.wrapper}>
-      <form className={styles.form} onSubmit={submitForm}>
-        <div className={styles.logo_title}>
-          <Image src="/img/iwex.svg" width={40} height={40} alt="logo-iwex" />
-          <h2 className={styles.form_title}>{t("titleLogin")}</h2>
-        </div>
-        <div className={styles.group}>
-          <input
-            type="email"
-            name="email"
-            required
-            className={styles.input}
-            onChange={changeHandler}
-          />
-          <span className={styles.highlight}></span>
-          <span className={styles.bar}></span>
-          <label className={styles.label}>Email</label>
-        </div>
+    <>
+      <div className={styles.wrapper}>
+        <form className={styles.form} onSubmit={submitForm}>
+          <div className={styles.logo_title}>
+            <Image src="/img/iwex.svg" width={40} height={40} alt="logo-iwex" />
+            <h2 className={styles.form_title}>{t("titleLogin")}</h2>
+          </div>
+          <div className={styles.group}>
+            <input
+              type="email"
+              name="email"
+              required
+              className={styles.input}
+              onChange={changeHandler}
+            />
+            <span className={styles.highlight}></span>
+            <span className={styles.bar}></span>
+            <label className={styles.label}>Email</label>
+          </div>
 
-        <div className={styles.group}>
-          <input
-            type={showPassword ? "text" : "password"}
-            name="password"
-            required
-            className={styles.input}
-            onChange={changeHandler}
-          />
-          <span className={styles.highlight}></span>
-          <span className={styles.bar}></span>
-          <label className={styles.label}>Password</label>
-          {showPassword ? (
-            <BiSolidShow className={styles.showIcon} onClick={togglePassword} />
-          ) : (
-            <BiSolidHide className={styles.showIcon} onClick={togglePassword} />
-          )}
+          <div className={styles.group}>
+            <input
+              type={showPassword ? "text" : "password"}
+              name="password"
+              required
+              className={styles.input}
+              onChange={changeHandler}
+            />
+            <span className={styles.highlight}></span>
+            <span className={styles.bar}></span>
+            <label className={styles.label}>Password</label>
+            {showPassword ? (
+              <BiSolidShow
+                className={styles.showIcon}
+                onClick={togglePassword}
+              />
+            ) : (
+              <BiSolidHide
+                className={styles.showIcon}
+                onClick={togglePassword}
+              />
+            )}
+          </div>
+          <div className={styles.group}>
+            <button className={styles.btn}>Авторизоваться</button>
+          </div>
+        </form>
+        <ul className={styles.circles}>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        <div className={styles.footer}>
+          <Footer />
         </div>
-        <div className={styles.group}>
-          <button className={styles.btn}>Авторизоваться</button>
-        </div>
-      </form>
-      <ul className={styles.circles}>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-    </div>
+      </div>
+    </>
   );
 };
 export default Login;
