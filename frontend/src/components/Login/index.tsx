@@ -4,10 +4,13 @@ import styles from "./login.module.sass";
 import { BiSolidHide, BiSolidShow } from "react-icons/bi";
 import { useTranslation } from "react-i18next";
 import Image from "next/image";
+// import { postAuth } from "@/api/login";
+import { useRouter } from "next/router";
+import Cookies from "js-cookie";
+import axios from "axios";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
-  const [changeText, setChangeText] = useState<string>("");
 
   const { t, i18n } = useTranslation();
   const [authData, setAuthData] = useState({
@@ -15,8 +18,36 @@ const Login = () => {
     password: "",
   });
 
-  const submitForm = (event: React.FormEventHandler<HTMLFormElement> | any) => {
-    event.preventDefault();
+  // const router = useRouter();
+
+  const submitForm = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const date = new Date();
+    date.setTime(date.getTime() + 20 * 1000);
+
+    try {
+      const response = await axios.post(
+        "http://10.137.60.137:8000/api/accounts/login/",
+        authData,
+        {
+          headers: {
+            Authorization: `Bearer ${Cookies.get("token")}`, // Добавляем заголовок авторизации с токеном
+          },
+        }
+      );
+      const data = response.data;
+
+      Cookies.set("token", data.jwt, {
+        expires: date,
+      });
+      if (data) {
+        console.log(data);
+        // alert("вы зашли нахуй");
+      }
+    } catch (error) {
+      alert("Incorrect email or password");
+    }
   };
 
   const togglePassword = () => {
@@ -36,15 +67,11 @@ const Login = () => {
     });
   };
 
-  interface img {
-    img: img;
-  }
-
   return (
     <div className={styles.wrapper}>
       <form className={styles.form} onSubmit={submitForm}>
         <div className={styles.logo_title}>
-          <Image src="./img/iwex.svg" width={40} height={40} alt="logo-iwex" />
+          <Image src="/img/iwex.svg" width={40} height={40} alt="logo-iwex" />
           <h2 className={styles.form_title}>{t("titleLogin")}</h2>
         </div>
         <div className={styles.group}>
@@ -96,5 +123,4 @@ const Login = () => {
     </div>
   );
 };
-
 export default Login;
