@@ -12,12 +12,11 @@ const Header = () => {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
   };
-
   return (
     <header className={styles.header}>
       <div className={styles.header__container}>
         <Link href="/" className={styles.logo}>
-          <Image src="./img/iwex.svg" width={35} height={35} alt="logo-iwex" />
+          <Image src="/img/iwex.svg" width={35} height={35} alt="logo-iwex" />
           <span className={styles.logo_text}>
             {text.split("").map((letter, index) => (
               <motion.span

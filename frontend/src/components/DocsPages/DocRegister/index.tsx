@@ -24,9 +24,10 @@ const Register = () => {
         <MdOutlineKeyboardArrowLeft size={50} color="#fc0" />
         Назад
       </Link>
-      <h1 className={styles.reg__title}>Справки и док-ты</h1>
-      <span className={styles.reg__span}>Справки для регистрации</span>
-      <div></div>
+      <div style={{ display: "flex", textAlign: "center" }}>
+        <h1 className={styles.reg__title}>Справки и док-ты</h1>
+        <span className={styles.reg__span}>Справки для регистрации</span>
+      </div>
     </div>
   );
 };

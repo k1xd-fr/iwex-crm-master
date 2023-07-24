@@ -62,7 +62,7 @@ const ProfilePage: React.FC<Props> = () => {
             <RiContactsBookFill color="#ffcc00" size={25} />,
             "/profile/add-Questionnaire",
             "Заполни анкету",
-            hasAccess
+            !hasAccess
           )}
           {renderCard(
             "Immatrikulations",
